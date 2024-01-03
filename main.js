@@ -1,9 +1,27 @@
-let cantidad = parseInt(prompt('cantidad'))
+const NOMBRE_DEL_EVENTO = "Evento Interactivo";
 
-let texto = prompt("ingresa el texto a repetir")
+// array de invitados
+let invitados = ["Juan", "María", "Carlos", "Ana"];
 
-for(let i =0; i<cantidad;i++){
+// Mostrar información 
+console.log(`¡Bienvenido al ${NOMBRE_DEL_EVENTO}!`);
 
-console.log(texto)
+// Iterar sobre el array 
+for (let i = 0; i < invitados.length; i++) {
+    // Verificar si el invitado confirmó su asistencia
+    let confirmacion = confirm(`¿${invitados[i]}, confirmas tu asistencia al ${NOMBRE_DEL_EVENTO}?`);
 
+    
+    if (confirmacion) {
+        console.log(`${invitados[i]} asistirá al ${NOMBRE_DEL_EVENTO}.`);
+    } else {
+        console.log(`${invitados[i]} no podrá asistir al ${NOMBRE_DEL_EVENTO}.`);
+    }
+}
+
+// Verificar el número de invitados que confirmaron asistencia
+if (invitados.length > 0) {
+    alert(`¡Gracias por confirmar tu asistencia al ${NOMBRE_DEL_EVENTO}!`);
+} else {
+    alert(`Lamentablemente, nadie podrá asistir al ${NOMBRE_DEL_EVENTO}.`);
 }
